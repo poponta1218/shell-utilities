@@ -66,7 +66,7 @@ done
 
 # Split the process information into separate variables
 pid_info=$(echo "${info}" | cut -d ' ' -f 1)
-stat_info=$(echo "${info}" | cut -d ' ' -f 2 | sed -i -e '/R/c RUN' -e '/S/c RUN' -e '/D/c RUN' -e '/T/c SUS' -e '/Z/c ZOMBIE')
+stat_info=$(echo "${info}" | cut -d ' ' -f 2 | sed -i -e '/R/c RUN' -e '/S/c RUN' -e '/D/c RUN' -e '/T/c SUS' -e '/Z/c DEFUNCT')
 cmd_info=$(echo "${info}" | cut -d ' ' -f 3-)
 dir_info=""
 

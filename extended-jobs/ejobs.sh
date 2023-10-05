@@ -74,7 +74,7 @@ done
 # Split the process information into separate files
 cut -d ' ' -f 1 "${tmp_dir}/tmp.pid" > "${tmp_dir}/pid.pid"
 cut -d ' ' -f 2 "${tmp_dir}/tmp.pid" > "${tmp_dir}/stat.pid"
-sed -i -e '/R/c RUN' -e '/S/c RUN' -e '/D/c RUN' -e '/T/c SUS' -e '/Z/c ZOMBIE' "${tmp_dir}/stat.pid"
+sed -i -e '/R/c RUN' -e '/S/c RUN' -e '/D/c RUN' -e '/T/c SUS' -e '/Z/c DEFUNCT' "${tmp_dir}/stat.pid"
 cut -d ' ' -f 3- "${tmp_dir}/tmp.pid" > "${tmp_dir}/cmd.pid"
 while read -r pid
 do
