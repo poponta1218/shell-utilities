@@ -26,17 +26,13 @@ do
 done
 
 dirlist=$(find $(dirname ${prefix}) -maxdepth 1 -type d -name "${prefix##*/}*" | sort)
-#echo "${dirlist}"
 
 # copying source objects to each target directory
 for i in ${!srcarr[@]}
 do
   for d in ${dirlist}
   do
-    #echo "${srcarr[${i}]}"
-    #if [ "${srcarr[${i}]}" \= "${d}" ] ; then
-      cp -r ${srcarr[${i}]} ${d}/
-    #fi
+    cp -r ${srcarr[${i}]} ${d}/
   done
 done
 exit
