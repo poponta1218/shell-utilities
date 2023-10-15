@@ -28,5 +28,5 @@ You can see the usage by executing the script with `-h` option, or you can see t
     ```bash
     source ~/.zshrc
     ```
-4. Done!
+4. Done!  
     You can use the scripts by typing the script name in your shell.
