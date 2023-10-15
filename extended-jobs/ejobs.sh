@@ -14,7 +14,7 @@ get_ppids() {
 # Get detailed information for each PPID
 get_process_info() {
   local ppid="$1"
-  reg="(${0}|\?|ps|awk|grep|tr|cut|\-(ba|c|tc|z)sh)"
+  reg="(${0}|\?|ps|awk|grep|tr|cut|ssh-add|\-(ba|c|tc|z)sh)"
   ps ax -o f,uid,pid,ppid,stat,cmd | awk -v f="0" -v uid="$(id -u)" -v ppid="${ppid}" '$1 == f && $2 == uid && $4 == ppid' |\
   grep -Ev "${reg}" | tr -s ' ' | cut -d ' ' -f 3,5,6-
 }
